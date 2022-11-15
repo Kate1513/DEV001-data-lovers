@@ -2,11 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <header>
+      <nav class="navbar">
+        <img src="./images/icons8-menu.svg" alt="menu" class="menu-icon">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="/">Peliculas</a></li>
+          <li><a href="/">Personajes</a></li>
+          <li><a href="/">Estudio</a></li>          
+        </ul> 
+        <div class="menu">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="/">Peliculas</a></li>
+            <li><a href="/">Personajes</a></li>
+            <li><a href="/">Estudio</a></li>          
+          </ul> 
+        </div>               
+      </nav>      
+    </header>    
+    <p>Peliculas</p>
+    <section class="filter-sort">
+      <section class="box">
+        <input type="search" name="search" placeholder="Buscar..." class="src" autocomplete="off">
+      </section>
+      <form action="#">
+        <select name="options" id="sortSelector">
+          <option disabled selected>Ordenar peliculas</option>
+          <option value="A-Z">A - Z</option>
+          <option value="Z-A">Z - A</option>
+          <option value="Year1-9">Año ascendente</option>
+          <option value="Year9-1">Año descendente</option>
+          <option value="Ranking">Ranking</option>        
+        </select> 
+      </form>
+    </section>
+    <section class="container">      
+    </section>        
     <script src="main.js" type="module"></script>
   </body>
 </html>
