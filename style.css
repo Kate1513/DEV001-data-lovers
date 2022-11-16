@@ -103,7 +103,8 @@ input.src:hover {
     align-items: center;
     margin: 2rem 1rem;
     grid-auto-columns: 145px;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 150px));  
+    grid-template-columns: repeat(auto-fit, minmax(130px, 150px)); 
+     
     gap: 4rem 2rem;
     justify-content: space-evenly;
 }
@@ -127,10 +128,35 @@ img {
     border-radius: 4px 4px 0 0;
 }
 
-.container h3 {
+h3 {
+    margin-top: 10rem;
     font-size: 3rem;
-    text-align: center;
-    width: 145%;    
+    text-align: center;   
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;    
+}
+
+.modal_container {
+    display: grid;
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3rem 2.5rem;
+    gap: 1rem;
+    place-items: center;
+    grid-auto-columns: 100%;
+
+
 }
 
 @media (min-width: 768px) {
