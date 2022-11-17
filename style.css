@@ -51,6 +51,7 @@ h1 {
 .menu ul li {
     list-style: none;
     margin: 2rem 0;
+    cursor: pointer;
 }
 
 .menu ul li a {
@@ -188,6 +189,7 @@ h3 {
         font-size: 3.5rem;
         margin-right: 2rem;
         transition: all .5s;
+        cursor: pointer;
     }
     
     .navbar ul li a{

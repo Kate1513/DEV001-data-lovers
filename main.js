@@ -6,7 +6,6 @@ let nodesToBeAppend = []
 const dataFilms = data.films
 const dataCharactersByFilm = []
 dataFilms.forEach(film => dataCharactersByFilm.push(film.people))
-
 const allCharacters = dataCharactersByFilm.flat()
 
 const linkPeliculas = document.querySelector('.peliculas')
@@ -66,6 +65,7 @@ search.addEventListener('change', (event) => {
 
 sortSelector.addEventListener('change', (event) => {
     clearNodes(containerNode)
+    
     if (event.target.value === 'A-Z'){
         renderMovies(sortData(data.films, 'A-Z'))   
     }
