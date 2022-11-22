@@ -1,5 +1,3 @@
-// estas funciones son de ejemplo
-
 export const filterData = (data, condition) => {
   const keyword = condition.toUpperCase()
   let filter = []
@@ -15,7 +13,7 @@ export const filterData = (data, condition) => {
 
 export const sortData = (data, sortBy, sortOrder) => {
   let orderSecuence = []
-  const whichOrder = sortOrder === 'DES' ? orderSecuence = [1 , -1] : orderSecuence = [-1 , 1]
+  sortOrder === 'DES' ? orderSecuence = [1 , -1] : orderSecuence = [-1 , 1]
   
   //functions to order
   const byAlphabet = function () {
