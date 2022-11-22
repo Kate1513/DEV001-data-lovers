@@ -8,9 +8,9 @@ const dataCharactersByFilm = []
 dataFilms.forEach(film => dataCharactersByFilm.push(film.people))
 const allCharacters = dataCharactersByFilm.flat()
 
-const linkPeliculas = document.querySelector('.peliculas')
-const linkPersonajes = document.querySelector('.personajes')
-const linkEstudio = document.querySelector('.estudio')
+const linkPeliculas = document.querySelectorAll('.peliculas')
+const linkPersonajes = document.querySelectorAll('.personajes')
+const linkEstudio = document.querySelectorAll('.estudio')
 const containerNode = document.querySelector('.container')
 const sortSelector = document.querySelector('#sortSelector')
 const search = document.querySelector('.src')
@@ -23,32 +23,37 @@ renderMovies(dataFilms)
 
 // Listeners para aplicar funcionalidad
 
-mediaQueryDesktop.addEventListener ('change', () => {
-    if (!menu.classList.contains('menu-inactive')) {
-        menu.classList.add('menu-inactive')
-    }
+mediaQueryDesktop.addEventListener ('change', () => {    
+    menu.classList.add('menu-inactive')
+       
 })
 
 menuIcon.addEventListener('click', () => {
     menu.classList.toggle('menu-inactive')
 })
 
-linkPeliculas.addEventListener('click', () => {
-    clearNodes(containerNode)
-    // Hace falta cambiar page-header
-    renderMovies(dataFilms)
+linkPeliculas.forEach((item) => {
+    item.addEventListener('click', () => {
+        clearNodes(containerNode)
+        // Hace falta cambiar page-header
+        renderMovies(dataFilms)
+    })    
 })
 
-linkPersonajes.addEventListener('click', () => {
-    clearNodes(containerNode)
-    // Hace falta cambiar page-header
-    renderCharacters(allCharacters)
+linkPersonajes.forEach((item) => {
+    item.addEventListener('click', () => {
+        clearNodes(containerNode)
+        // Hace falta cambiar page-header
+        renderCharacters(allCharacters)
+    })
 })
 
-linkEstudio.addEventListener('click', () => {
-    clearNodes(containerNode)
-    // Hace falta cambiar page-header
-    // renderEstudio()
+linkEstudio.forEach((item) => {
+    item.addEventListener('click', () => {
+        clearNodes(containerNode)
+        // Hace falta cambiar page-header
+        // renderEstudio()
+    })
 })
 
 search.addEventListener('change', (event) => {
@@ -145,7 +150,12 @@ function renderCharacters (characters) {
     }
 }
 
-// function renderCharacters (name) {
+// function modalBox () {
+    
+// }
+
+
+// function renderStudio (name) {
 //     if (name.length > 0) {
 //         name.forEach((item) => {
 
