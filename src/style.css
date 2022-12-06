@@ -35,7 +35,7 @@ h1 {
 
 .menu-icon {
     width: 48px;
-    margin-left: 2rem;
+    margin: 0.7rem 0 0.6rem 3rem;
 }
 
 .menu {
@@ -43,7 +43,6 @@ h1 {
     top: 60px;
     font-size: 2.5rem;
     padding: 0 2rem;
-    /* transition: all 1s; */
     background: black;
     border-radius: 0 0 5px 0;
 }
@@ -59,9 +58,38 @@ h1 {
     color: #fff;
 }
 
-p {
+.title-header {
+    display: flex;
+    flex-direction: column;
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/src/images/Ghibl-blue-small.png");
+    background-color: #0080bc;
+    background-position: center;
+    margin: auto;
+    height: 50rem;
+    background-repeat: no-repeat;
+}
+
+.title-header h1 {
+    color: aliceblue;
+    font-size: 3rem;
+    padding: 6rem 0 4rem 5rem;
+}
+
+.title-header h2 {
+    color: aliceblue;
+    font-size: 2rem;
+    width: 80%;
+    padding: 0 5rem;
+}
+
+.title-page {
     font-size: 3rem;
     margin: 4rem 2rem;
+}
+
+.totoro {
+    width: 10%;
 }
 
 .filter-sort { 
@@ -102,6 +130,9 @@ input.src:hover {
 #sortSelector {
     font-size: 1.5rem;
     text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-color: blueviolet;
 }
 
 .container {
@@ -131,43 +162,13 @@ input.src:hover {
 img {
     width: 100%;
     height: 74%;
-    /* object-fit: contain; */
     border-radius: 4px 4px 0 0;
 }
 
-h2 {
-    margin: auto;
-}
-
 h3 {
-    margin-top: 10rem;
+    margin: 20rem 0;
     font-size: 3rem;
     text-align: center;   
-}
-
-.modal {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #111111bd;    
-}
-
-.modal_container {
-    display: grid;
-    margin: auto;
-    width: 90%;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 3rem 2.5rem;
-    gap: 1rem;
-    place-items: center;
-    grid-auto-columns: 100%;
-
-
 }
 
 @media (min-width: 768px) {
@@ -212,9 +213,12 @@ h3 {
     input.src:hover {
         width: 300px;
     }
+
     .filter-sort {         
-        width: 90%;     
+        width: 90%;   
+        margin-bottom: 6rem;  
     }
+    
     .container {
         /* grid-auto-columns: 150px; */
         grid-template-columns: repeat(auto-fit, minmax(145px, 150px));  
@@ -226,9 +230,24 @@ h3 {
         margin-right: 5%;
     }
 
-    p {
+    .title-header h1 {
+        color: aliceblue;
         font-size: 4rem;
-        margin: 5rem 0 5rem 10rem;
+        padding: 8rem 0 2rem 10rem;
+        /* margin: 5rem 0 5rem 10rem; */
+    }
+    
+    .title-header h2 {
+        color: aliceblue;
+        font-size: 2rem;
+        width: 40%;
+        padding: 0 10rem;
+        
+    }
+    
+    .title-page {
+        font-size: 4rem;
+        margin: 4rem 0 4rem 10rem;
     }
 }
 
@@ -245,7 +264,7 @@ h3 {
     }
     #sortSelector {
         font-size: 2rem;
-        margin: 2rem 4rem;
+        margin: 1rem;
     }
 }
 

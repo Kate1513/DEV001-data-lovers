@@ -8,9 +8,9 @@ const dataCharactersByFilm = []
 dataFilms.forEach(film => dataCharactersByFilm.push(film.people))
 const allCharacters = dataCharactersByFilm.flat()
 
+const titlePage = document.querySelector('.title-page')
 const linkPeliculas = document.querySelectorAll('.peliculas')
 const linkPersonajes = document.querySelectorAll('.personajes')
-const linkEstudio = document.querySelectorAll('.estudio')
 const containerNode = document.querySelector('.container')
 const sortSelector = document.querySelector('#sortSelector')
 const search = document.querySelector('.src')
@@ -24,8 +24,7 @@ renderMovies(dataFilms)
 // Listeners para aplicar funcionalidad
 
 mediaQueryDesktop.addEventListener ('change', () => {    
-    menu.classList.add('menu-inactive')
-       
+    menu.classList.add('menu-inactive')       
 })
 
 menuIcon.addEventListener('click', () => {
@@ -35,7 +34,6 @@ menuIcon.addEventListener('click', () => {
 linkPeliculas.forEach((item) => {
     item.addEventListener('click', () => {
         clearNodes(containerNode)
-        // Hace falta cambiar page-header
         renderMovies(dataFilms)
     })    
 })
@@ -43,16 +41,7 @@ linkPeliculas.forEach((item) => {
 linkPersonajes.forEach((item) => {
     item.addEventListener('click', () => {
         clearNodes(containerNode)
-        // Hace falta cambiar page-header
         renderCharacters(allCharacters)
-    })
-})
-
-linkEstudio.forEach((item) => {
-    item.addEventListener('click', () => {
-        clearNodes(containerNode)
-        // Hace falta cambiar page-header
-        // renderEstudio()
     })
 })
 
@@ -98,6 +87,7 @@ function clearNodes (parentNode){
 }
 
 function renderMovies (films) {
+    titlePage.textContent = 'Peliculas'
     if (films.length > 0) {
         films.forEach((item) => {
         const image = document.createElement("img")
@@ -126,6 +116,7 @@ function renderMovies (films) {
 }
 
 function renderCharacters (characters) {
+    titlePage.textContent = 'Personajes'
     if (characters.length > 0) {
         characters.forEach((item) => {
         const image = document.createElement("img")
@@ -149,37 +140,3 @@ function renderCharacters (characters) {
         containerNode.append(notFoundInfo) 
     }
 }
-
-// function modalBox () {
-    
-// }
-
-
-// function renderStudio (name) {
-//     if (name.length > 0) {
-//         name.forEach((item) => {
-
-//         const image = document.createElement("img")
-//         image.src = item.img
-        
-//         const name = document.createElement("h2")
-//         name.textContent = item.name
-    
-//         const date = document.createElement("h2")
-//         date.textContent = `Fecha: ${item.release_date}`
-
-//         const ranking = document.createElement("h2")
-//         ranking.textContent = `Ranking: ${item.rt_score}`
-    
-//         const container = document.createElement("div")
-//         container.append(image, name, date, ranking)
-//         allMovies.push(container)
-//         })
-//     } else {
-//         const a = document.createElement("h3")
-//         a.textContent = 'No se encuentran resultados de la busqueda, por favor intente de nuevo.'
-//         const container = document.createElement("h3")
-//         container.append(a)
-//         allMovies.push(container)
-//     }
-// }
