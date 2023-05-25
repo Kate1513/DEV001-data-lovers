@@ -26,7 +26,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       if (filmA > filmB){
         return orderSecuence[1]
       }
-      return 0
+      // return 0
     }) 
   return data
   }             

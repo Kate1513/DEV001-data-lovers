@@ -2,7 +2,6 @@ import { filterData } from './data.js';
 import { sortData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-let nodesToBeAppend = []
 const dataFilms = data.films
 const dataCharactersByFilm = []
 dataFilms.forEach(film => dataCharactersByFilm.push(film.people))
@@ -48,12 +47,12 @@ linkPersonajes.forEach((item) => {
 search.addEventListener('change', (event) => {
    clearNodes(containerNode)  
    if (event.target.value != '') {    
-   let filter = filterData(dataFilms, event.target.value)
-   renderMovies(filter)
+        const filter = filterData(dataFilms, event.target.value);
+        renderMovies(filter);
    } else {
-    clearNodes(containerNode)
-    renderMovies(dataFilms)
-    containerNode.classList.add('container')
+        clearNodes(containerNode)
+        renderMovies(dataFilms)
+        containerNode.classList.add('container')
    }
 })
 
@@ -80,13 +79,13 @@ sortSelector.addEventListener('change', (event) => {
 // Declaracion de las funciones
 
 function clearNodes (parentNode){
-    nodesToBeAppend = []
     while (parentNode.firstChild){
         parentNode.removeChild(parentNode.firstChild)
     }
 }
 
 function renderMovies (films) {
+    const nodesToBeAppend = []
     titlePage.textContent = 'Peliculas'
     if (films.length > 0) {
         films.forEach((item) => {
@@ -105,8 +104,8 @@ function renderMovies (films) {
         const content = document.createElement("div")
         content.append(image, name, date, ranking)
         nodesToBeAppend.push(content)
-        containerNode.append(...nodesToBeAppend)
         })
+        containerNode.append(...nodesToBeAppend)
     } else {
         const notFoundInfo = document.createElement("h3")
         notFoundInfo.textContent = 'No se encuentran resultados de la busqueda, por favor intente de nuevo.'
@@ -116,6 +115,7 @@ function renderMovies (films) {
 }
 
 function renderCharacters (characters) {
+    const nodesToBeAppend = []
     titlePage.textContent = 'Personajes'
     if (characters.length > 0) {
         characters.forEach((item) => {
@@ -131,12 +131,12 @@ function renderCharacters (characters) {
         const content = document.createElement("div")
         content.append(image, name, age)
         nodesToBeAppend.push(content)
+        }) 
         containerNode.append(...nodesToBeAppend)
-        })
     } else {
         const notFoundInfo = document.createElement("h3")
         notFoundInfo.textContent = 'No se encuentran resultados de la busqueda, por favor intente de nuevo.'
         containerNode.classList.remove('container')
         containerNode.append(notFoundInfo) 
-    }
+    }    
 }
